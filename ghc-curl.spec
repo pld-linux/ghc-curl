@@ -2,12 +2,13 @@
 Summary:	Haskell binding to libcurl
 Name:		ghc-%{pkgname}
 Version:	1.3.8
-Release:	1
+Release:	2
 License:	BSD
 Group:		Development/Languages
 Source0:	http://hackage.haskell.org/packages/archive/%{pkgname}/%{version}/%{pkgname}-%{version}.tar.gz
 # Source0-md5:	853113e2ac933e203894a4588150821d
 URL:		http://hackage.haskell.org/package/curl/
+BuildRequires:	curl-devel
 BuildRequires:	ghc >= 6.12.3
 BuildRequires:	ghc-prof
 BuildRequires:	rpmbuild(macros) >= 1.608
