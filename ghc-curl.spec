@@ -33,7 +33,7 @@ Requires:	ghc-base >= 3
 Requires:	ghc-base < 5
 Requires:	ghc-bytestring >= 0.9
 Requires:	ghc-containers
-%requires_releq	ghc
+%requires_eq	ghc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # debuginfo is not useful for ghc
