@@ -7,7 +7,7 @@ Summary:	Haskell binding to libcurl
 Summary(pl.UTF-8):	Wiązanie Haskella do biblioteki libcurl
 Name:		ghc-%{pkgname}
 Version:	1.3.8
-Release:	3
+Release:	4
 License:	BSD
 Group:		Development/Languages
 #Source0Download: http://hackage.haskell.org/package/curl
@@ -121,17 +121,20 @@ rm -rf $RPM_BUILD_ROOT
 %doc CHANGES %{name}-%{version}-doc/*
 %{_libdir}/%{ghcdir}/package.conf.d/%{pkgname}.conf
 %dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}
-%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/HScurl-%{version}.o
-%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHScurl-%{version}.a
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHScurl-%{version}-*.so
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHScurl-%{version}-*.a
+%exclude %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHScurl-%{version}-*_p.a
 %dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Network
 %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Network/Curl.hi
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Network/Curl.dyn_hi
 %dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Network/Curl
 %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Network/Curl/*.hi
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Network/Curl/*.dyn_hi
 
 %if %{with prof}
 %files prof
 %defattr(644,root,root,755)
-%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHScurl-%{version}_p.a
+%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHScurl-%{version}-*_p.a
 %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Network/Curl.p_hi
 %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/Network/Curl/*.p_hi
 %endif
