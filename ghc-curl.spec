@@ -7,7 +7,7 @@ Summary:	Haskell binding to libcurl
 Summary(pl.UTF-8):	Wiązanie Haskella do biblioteki libcurl
 Name:		ghc-%{pkgname}
 Version:	1.3.8
-Release:	4
+Release:	5
 License:	BSD
 Group:		Development/Languages
 #Source0Download: http://hackage.haskell.org/package/curl
